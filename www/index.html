@@ -11,24 +11,52 @@
     <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' gap:; style-src 'self' 'unsafe-inline'; media-src *" />
     <link rel="stylesheet" type="text/css" href="css/index.css" />
     <title>Hello World</title>
-</head>
+	
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+	
+        function enviar() {
+		
+			//PEGAR VARIÁVEIS
+			var empresa = $("#empresa").val();
+			var contrato = $("#contrato").val();
+			var album = $("#album").val();
+			var senha = $("#senha").val();
+
+			$.ajax({
+			  type: "GET",
+			  url: 'http://www.porcocapitalista.com.br/teste4.php',
+			  data: {'empresa': empresa, 'contrato': contrato, 'album': album, 'senha': senha},
+			  dataType: 'jsonp',
+			  jsonp: 'jsoncallback',
+			  timeout: 5000,
+			  success: function(response, status){
+								 alert(response);
+							}
+			});
+
+	    } 
+		
+	</script>
+
+	</head>
 
 <body>
     <div class="app">
         <h1>Minha Formatura</h1>
         <p>Essa é a primeira vez que você acessa o Minha Formatura por este dispositivo. Por isso você precisa se identificar para baixar o seu álbum no seu aparelho e assim poder visualizá-lo mesmo quando não estiver conectado à internet.</p>
         
-        <form action="http://www.porcocapitalista.com.br/teste.php">
-  			<input type="text" name="empresa" placeholder="Empresa" autofocus required>
+
+  			<input type="text" id="empresa" name="empresa" placeholder="Empresa" autofocus required>
   			<br>
-  			<input type="text" name="contrato" placeholder="Contrato" required>
+  			<input type="text" id="contrato" name="contrato" placeholder="Contrato" required>
   			<br>
-            <input type="text" name="album" placeholder="Album" required>
+            <input type="text" id="album" name="album" placeholder="Album" required>
   			<br>
-            <input type="password" name="senha" placeholder="Senha" required>
+            <input type="password" id="senha" name="senha" placeholder="Senha" required>
   			<br><br>
-  			<input type="submit" value="Baixar Álbum">
-		</form> 
+  			<button onclick="enviar()">BAIXAR ÁLBUM</button>
+
     </div>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
