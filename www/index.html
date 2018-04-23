@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 
-<html>
-
 <head>
     <meta charset="utf-8" />
     <meta name="format-detection" content="telephone=no" />
@@ -31,7 +29,7 @@
 			  jsonp: 'jsoncallback',
 			  timeout: 5000,
 			  success: function(response, status){
-								 alert(response);
+								 $("#resposta").append("<p>"+response+"</p>");
 							}
 			});
 
@@ -56,6 +54,8 @@
             <input type="password" id="senha" name="senha" placeholder="Senha" required>
   			<br><br>
   			<button onclick="enviar()">BAIXAR ÁLBUM</button>
+			
+			<div id="resposta"></div>
 
     </div>
     <script type="text/javascript" src="cordova.js"></script>
