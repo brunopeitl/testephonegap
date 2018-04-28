@@ -13,6 +13,8 @@
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript">
 	
+		
+	
         function enviar() {
 		
 			//PEGAR VARIÁVEIS
@@ -20,6 +22,7 @@
 			var contrato = $("#contrato").val();
 			var album = $("#album").val();
 			var senha = $("#senha").val();
+			var response;
 
 			if (empresa == '') {
 				$("#resposta").html("");
@@ -47,9 +50,12 @@
 				  timeout: 5000,
 				  success: function(response, status){
 									$("#resposta").html("");
-									$("#resposta").html("<p>"+response+"</p>");
+									var caminhocompleto = "http://www.porcocapitalista.com.br"+response+"/05.jpg"
+									$("#resposta").html("<p>"+caminhocompleto+"</p>");
 								}
 				});
+				
+				
 			}
 
 	    } 
