@@ -25,7 +25,6 @@
 			var album = $("#album").val();
 			var senha = $("#senha").val();
 			var response;
-			alert("teste");
 
 			if (empresa == '') {
 				$("#resposta").html("");
@@ -92,8 +91,7 @@ var app = {
     // Update DOM on a Received Event
     receivedEvent: function(id) {
 		//Aqui começa o meu script
-		//document.getElementById("baixarAlbum").addEventListener("click", enviar);
-		document.getElementById("resposta").innerHTML = "<p>Função foi</p>";
+		document.getElementById("baixarAlbum").addEventListener("click", enviar);
 		
 		
         var parentElement = document.getElementById(id);
