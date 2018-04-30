@@ -9,88 +9,6 @@
     <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' gap:; style-src 'self' 'unsafe-inline'; media-src *" />
     <link rel="stylesheet" type="text/css" href="css/index.css" />
     <title>Minha Formatura</title>
-	
-	<script type="text/javascript" src="js/jquery.min.js"></script>
-	<script type="text/javascript">
-	
-		
-	
-        function enviar() {
-		
-			//PEGAR VARIÁVEIS
-			var empresa = $("#empresa").val();
-			var contrato = $("#contrato").val();
-			var album = $("#album").val();
-			var senha = $("#senha").val();
-			var response;
-
-			if (empresa == '') {
-				$("#resposta").html("");
-				$("#resposta").html("<p>Preencha o campo Empresa</p>");
-			}
-			else if (contrato == '') {
-				$("#resposta").html("");
-				$("#resposta").html("<p>Preencha o campo Contrato</p>");
-			}
-			else if (album == '') {
-				$("#resposta").html("");
-				$("#resposta").html("<p>Preencha o campo Album</p>");
-			}
-			else if (senha == '') {
-				$("#resposta").html("");
-				$("#resposta").html("<p>Preencha o campo Senha</p>");
-			}
-			else {
-				$.ajax({
-				  type: "GET",
-				  url: 'http://www.porcocapitalista.com.br/teste4.php',
-				  data: {'empresa': empresa, 'contrato': contrato, 'album': album, 'senha': senha},
-				  dataType: 'jsonp',
-				  jsonp: 'jsoncallback',
-				  timeout: 5000,
-				  success: function(response, status){
-									$("#resposta").html("");
-									var caminhocompleto = "http://www.porcocapitalista.com.br"+response+"/05.jpg"
-									$("#resposta").html("<p>"+caminhocompleto+"</p>");
-									
-									
-									
-									//BAIXAR
-									window.location=caminhocompleto;
-									/*var fileTransfer = new FileTransfer();
-									var uri = encodeURI(caminhocompleto);
-
-									fileTransfer.download(
-										uri,
-										fileURL,
-										function(entry) {
-											console.log("download complete: " + entry.toURL());
-										},
-										function(error) {
-											console.log("download error source " + error.source);
-											console.log("download error target " + error.target);
-											console.log("download error code" + error.code);
-										},
-										false,
-										{
-											headers: {
-												"Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="
-											}
-										}
-									);*/
-									
-									
-									
-									
-							}
-				});
-				
-				
-			}
-
-	    } 
-		
-	</script>
 
 	</head>
 
@@ -108,14 +26,14 @@
   			<br>
             <input type="password" id="senha" name="senha" placeholder="Senha" required>
   			<br><br>
-  			<button onclick="enviar()">BAIXAR ÁLBUM</button>
+  			<button id="baixarAlbum">BAIXAR ÁLBUM</button>
 			
-			<p><a href="ativ2.html">Proxima</a></p>
 			<div id="resposta"></div>
 		
 		<p>Não tem as informações necessárias para baixar o seu álbum? Entre em contato com a empresa contratada.</p>
 
     </div>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript">
