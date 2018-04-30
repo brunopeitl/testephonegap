@@ -25,7 +25,7 @@
 			var album = $("#album").val();
 			var senha = $("#senha").val();
 			var response;
-			alet("teste");
+			alert("teste");
 
 			if (empresa == '') {
 				$("#resposta").html("");
