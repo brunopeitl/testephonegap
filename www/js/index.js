@@ -16,6 +16,60 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+ 
+ function enviar() {
+		
+			//PEGAR VARIÁVEIS
+			var empresa = $("#empresa").val();
+			var contrato = $("#contrato").val();
+			var album = $("#album").val();
+			var senha = $("#senha").val();
+			var response;
+			alet("teste");
+
+			if (empresa == '') {
+				$("#resposta").html("");
+				$("#resposta").html("<p>Preencha o campo Empresa</p>");
+			}
+			else if (contrato == '') {
+				$("#resposta").html("");
+				$("#resposta").html("<p>Preencha o campo Contrato</p>");
+			}
+			else if (album == '') {
+				$("#resposta").html("");
+				$("#resposta").html("<p>Preencha o campo Album</p>");
+			}
+			else if (senha == '') {
+				$("#resposta").html("");
+				$("#resposta").html("<p>Preencha o campo Senha</p>");
+			}
+			else {
+				$.ajax({
+				  type: "GET",
+				  url: 'http://www.porcocapitalista.com.br/teste4.php',
+				  data: {'empresa': empresa, 'contrato': contrato, 'album': album, 'senha': senha},
+				  dataType: 'jsonp',
+				  jsonp: 'jsoncallback',
+				  timeout: 5000,
+				  success: function(response, status){
+									$("#resposta").html("");
+									var caminhocompleto = "http://www.porcocapitalista.com.br"+response+"/05.jpg"
+									$("#resposta").html("<p>"+caminhocompleto+"</p>");
+									
+									
+									
+									
+							}
+				});
+				
+				
+			}
+
+	    } 
+ 
+ 
+ 
+ 
 var app = {
     // Application Constructor
     initialize: function() {
@@ -37,6 +91,11 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
+		//Aqui começa o meu script
+		//document.getElementById("baixarAlbum").addEventListener("click", enviar);
+		document.getElementById("resposta").innerHTML = "<p>Função foi</p>";
+		
+		
         var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
@@ -45,5 +104,6 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+		
     }
 };
