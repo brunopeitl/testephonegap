@@ -55,6 +55,30 @@
 									var caminhocompleto = "http://www.porcocapitalista.com.br"+response+"/05.jpg"
 									$("#resposta").html("<p>"+caminhocompleto+"</p>");
 									
+									//Aqui vai o comando do download
+									var fileTransfer = new FileTransfer();
+									var uri = encodeURI(caminhocompleto);
+									var fileURL =  "///storage/emulated/0/DCIM/myFile";
+
+								   fileTransfer.download(
+									  uri, fileURL, function(entry) {
+										 console.log("download complete: " + entry.toURL());
+									  },
+										
+									  function(error) {
+										 console.log("download error source " + error.source);
+										 console.log("download error target " + error.target);
+										 console.log("download error code" + error.code);
+									  },
+										
+									  false, {
+										 headers: {
+											"Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="
+										 }
+									  }
+								   );
+								   //Aqui termina o script do download
+									
 									
 									
 									
