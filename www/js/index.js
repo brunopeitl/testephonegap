@@ -63,12 +63,14 @@
 								   fileTransfer.download(
 									  uri, fileURL, function(entry) {
 										 console.log("download complete: " + entry.toURL());
+										 $("#resposta").html("<p>Deveria ter dado certo...</p>");
 									  },
 										
 									  function(error) {
 										 console.log("download error source " + error.source);
 										 console.log("download error target " + error.target);
 										 console.log("download error code" + error.code);
+										 $("#resposta").html("<p>Deu um erro aí!</p>");
 									  },
 										
 									  false, {
