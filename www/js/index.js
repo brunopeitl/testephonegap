@@ -58,7 +58,7 @@
 									//Aqui vai o comando do download
 									var fileTransfer = new FileTransfer();
 									var uri = encodeURI(caminhocompleto);
-									var fileURL =  "///storage/emulated/0/DCIM/myFile";
+									var fileURL =  "///storage/emulated/0/DCIM/05.jpg";
 
 								   fileTransfer.download(
 									  uri, fileURL, function(entry) {
