@@ -118,6 +118,8 @@ var app = {
     receivedEvent: function(id) {
 		//Aqui começa o meu script
 		document.getElementById("baixarAlbum").addEventListener("click", enviar);
+		var camin = window.location.pathname;
+		document.getElementById("textoteste").innerHTML = "<p>"+camin+"</p>";
 		
 		
         var parentElement = document.getElementById(id);
