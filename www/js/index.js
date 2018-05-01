@@ -58,7 +58,7 @@
 									//Aqui vai o comando do download
 									var fileTransfer = new FileTransfer();
 									var uri = encodeURI(caminhocompleto);
-									var fileURL =  "cdvfile://localhost/persistent/testephonegap/album/05.jpg";
+									var fileURL =  "/android_asset/www/img/05.jpg";
 
 								   fileTransfer.download(
 									  uri, fileURL, function(entry) {
