@@ -118,24 +118,10 @@ var app = {
     receivedEvent: function(id) {
 		//Aqui começa o meu script
 		document.getElementById("baixarAlbum").addEventListener("click", enviar);
-		//var camin = window.location.pathname; --Não está sendo usado por enquanto
-		
-		//Testa esse script aqui
-		function gotFS(fileSystem) {
-			console.log("got filesystem");
-			// save the file system for later access
-			console.log(fileSystem.root.fullPath);
-			window.rootFS = fileSystem.root;
-		}
-
-		document.addEventListener('deviceready', function() {                
-			window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
-			window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
-		}, false);
-		
-		//Isso daqui é por minha conta
-		var camin = rootFS.fullPath;
-		document.getElementById("textoteste").innerHTML = "<p>"+camin+"</p>";
+		//FAZER ESSE TESTE AQUI
+		var camin = LocalFileSystem.PERSISTENT;
+		var caminh = cordova.file.externalRootDirectory;
+		document.getElementById("textoteste").innerHTML = "<p>"+camin+" || "+caminh+"</p>";
 		
 		
         var parentElement = document.getElementById(id);
