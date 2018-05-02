@@ -10,11 +10,17 @@
     <link rel="stylesheet" type="text/css" href="css/index.css" />
     <title>Minha Formatura</title>
 
+	<script type="text/javascript">
+		document.getElementById("imagem").innerHTML = "<img src='"+cordova.file.externalRootDirectory+"Direct/05.jpg' />";
+	</script
+	
 	</head>
 
 <body>
     <div class="app">
-		<img src="/android_asset/www/img/05.jpg" />
+		<div id="imagem">
+			
+		</div>
     </div>
 	<script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
