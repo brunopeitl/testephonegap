@@ -11,7 +11,9 @@
     <title>Minha Formatura</title>
 
 	<script type="text/javascript">
-		document.getElementById("imagem").innerHTML = "<img src='"+cordova.file.externalRootDirectory+"Direct/05.jpg' />";
+		//var local = cordova.file.externalRootDirectory;
+		var local = "file:///storage/emulated/0/";
+		document.getElementById("imagem").innerHTML = "<img src='"+local+"Direct/05.jpg' />";
 	</script
 	
 	</head>
