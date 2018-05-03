@@ -121,7 +121,8 @@ var app = {
 		//FAZER ESSE TESTE AQUI
 		var camin = LocalFileSystem.PERSISTENT;
 		var caminh = cordova.file.externalRootDirectory;
-		document.getElementById("textoteste").innerHTML = "<p>"+camin+" || "+caminh+"</p>";
+	    	var caminhoo = cordova.file.dataDirectory;
+		document.getElementById("textoteste").innerHTML = "<p>"+camin+" || "+caminh+" || "+caminhoo+"</p>";
 		
 		
         var parentElement = document.getElementById(id);
