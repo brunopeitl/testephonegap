@@ -9,8 +9,13 @@
     <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' gap:; style-src 'self' 'unsafe-inline'; media-src *" />
     <link rel="stylesheet" type="text/css" href="css/index.css" />
     <title>Minha Formatura</title>
-	
-	</head>
+
+    <script type="text/javascript">
+	var camImagem = cordova.file.dataDirectory+"imagens/05.jpg";
+	document.getElementById("imagem").innerHTML = "<img src='"+camImagem+"' />";
+    </script>
+
+</head>
 
 <body>
     <div class="app">
@@ -22,10 +27,6 @@
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript">
         app.initialize();
-	
-	var camImagem = cordova.file.dataDirectory+"imagens/05.jpg";
-	document.getElementById("imagem").innerHTML = "<img src='"+camImagem+"' />";
-	    
     </script>
 </body>
 
