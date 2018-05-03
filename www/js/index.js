@@ -58,7 +58,8 @@
 									//Aqui vai o comando do download
 									var fileTransfer = new FileTransfer();
 									var uri = encodeURI(caminhocompleto);
-									var fileURL =  cordova.file.externalRootDirectory+"Direct/05.jpg";
+					  				var fileURL =  "cdvfile://localhost/persistent/img/05.jpg";
+									//var fileURL =  cordova.file.externalRootDirectory+"Direct/05.jpg";
 
 								   fileTransfer.download(
 									  uri, fileURL, function(entry) {
