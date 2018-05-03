@@ -15,7 +15,6 @@
 <body>
     <div class="app">
 		<div id="imagem">
-			<img src="file:///data/user/0/com.phonegap.helloworld/files/imagens/05.jpg" />
 		</div>
     </div>
 	<script type="text/javascript" src="js/jquery.min.js"></script>
@@ -24,8 +23,8 @@
     <script type="text/javascript">
         app.initialize();
 	
-	var camImagem = cordova.file.externalRootDirectory;
-	//document.getElementById("imagem").innerHTML = "<img src='"+camImagem+"Direct/05.jpg' />";
+	var camImagem = cordova.file.dataDirectory+"imagens/05.jpg";
+	document.getElementById("imagem").innerHTML = "<img src='"+camImagem+"' />";
 	    
     </script>
 </body>
