@@ -4,6 +4,8 @@
   <author href="http://phonegap.com" email="support@phonegap.com">PhoneGap Team</author>
   <content src="index.html"/>
   <preference name="DisallowOverscroll" value="true"/>
+  <!--<preference name="AndroidPersistentFileLocation" value="Internal" />-->
+  <!--<preference name="iosPersistentFileLocation" value="Library" />-->
   <plugin name="cordova-plugin-whitelist" source="npm"/>
   <plugin name="cordova-plugin-battery-status" source="npm" spec="~1.2.4"/>
   <!--<plugin name="cordova-plugin-camera" source="npm" spec="~2.4.1"/>-->
@@ -104,6 +106,4 @@
     <allow-intent href="itms:*"/>
     <allow-intent href="itms-apps:*"/>
   </platform>
-  <preference name="AndroidPersistentFileLocation" value="Internal" />
-  <preference name="iosPersistentFileLocation" value="Library" />
 </widget>
