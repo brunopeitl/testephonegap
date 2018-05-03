@@ -23,8 +23,9 @@
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript">
         app.initialize();
-	    
-	document.getElementById("imagem").innerHTML = "<img src='file:///storage/emulated/0/Direct/05.jpg' />";
+	
+	var camImagem = cordova.file.externalRootDirectory;
+	document.getElementById("imagem").innerHTML = "<img src='"+camImagem+"Direct/05.jpg' />";
 	    
     </script>
 </body>
