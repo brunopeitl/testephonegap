@@ -123,9 +123,6 @@ var app = {
 		var caminh = cordova.file.externalRootDirectory;
 	    	var caminhoo = cordova.file.dataDirectory;
 		document.getElementById("textoteste").innerHTML = "<p>"+camin+" || "+caminh+" || "+caminhoo+"</p>";
-	    
-	        var camImagem = cordova.file.dataDirectory+"imagens/05.jpg";
-		document.getElementById("imagem").innerHTML = "<p>"+camImagem+"</p>";
 		
 		
         var parentElement = document.getElementById(id);
