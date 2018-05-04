@@ -40,7 +40,7 @@ var app = {
     receivedEvent: function(id) {
 		//Aqui vai minhas coisas
 		var camImagem = cordova.file.dataDirectory+"imagens/05.jpg";
-		document.getElementById("imagem").innerHTML = "<p>"+camImagem+"</p>";
+		document.getElementById("imagem").innerHTML = "<img src='"+camImagem+"' />";
 		
         var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
